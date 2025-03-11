@@ -112,7 +112,6 @@ a:visited{
 }
 
 #encards {
-    border: solid black;
     height: 50%;
     width: 55%;
     display: flex;
@@ -200,19 +199,65 @@ a:visited{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
 }
 
 #placeholder-train {
     color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .train {
-    border: solid black;
-    width: 9vw;
+    width: 35%;
+    margin: 5%;
+}
 
+hr {
+    width: 80%;
+    display: block;
+    border: 0;
+    border-top: 5px solid #459e85;
+    margin: 1em 0;
+    padding: 0;
 }
 
 .future {
-    border: solid black;
+    margin: 5%;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#all-trips {
+    overflow: scroll;
+    display: grid;
+    flex-direction: column;
+    width: 100%;
+}
+
+.cart-row {
+    display: flex;
+    margin-top: 2vh;
+    margin-left: 2vh;
+    justify-content: center;
+    border-radius: 5px;
+    height: 5vh;
+    background-color: #f5eeee;
+}
+
+.cart-row > p {
+    margin: auto;
+}
+
+.book-train {
+    margin: auto;
+    width: 15%;
+    height: 80%;
+    border-radius: 5px;
+    background-color: #459e85;
+    color: white;
+    border: none;
 }
