@@ -17,20 +17,34 @@
 <body>
   <div id="container">
     <div id="header">
-      <h1 class="tickethack" href="">Tickethack</h1>
+      <h1 class="tickethack"><a href="">Tickethack</a></h1>
       <div id="panier">
-        <h4 class="cart" href="">Cart</h3>
-        <h4 class="bokkings" href="">Bookings</h3>
+        <h4 class="cart"><a href="">Cart</a></h3>
+        <h4 class="bokkings"><a href="">Bookings</a></h3>
       </div>
     </div>
     <div id="contain">
       <div id="explore">
         <h2 class="world">Explore the world effortlessly by train!</h2>
-        <p class="compare">Compare, book and enjoy cheap prices for train tickets: your journey starts on Tickethack</p>
+        <p class="compare">Compare, book and enjoy cheap prices for train tickets: your journey starts on Tickethack.</p>
       </div>
       <div id="encards">
-        <div id="reserch">RESERCH</div>
-        <div id="result">RESULT</div>
+        <div id="reserch">
+          <input type="text" class="departure" alt="departure" placeholder="Departure"/>
+          <input type="text" class="arrival" alt="arrival" placeholder="Arrival"/>
+          <input type="date" class="calendar" alt="calendar"/>
+          <button class="search" type="button">Search</button>
+        </div>
+        <div id="result">
+          <div id="placeholder-train">
+            <img class="train" src="images/train.png">
+            <p class="future"> It's time to book your future trip.</p>
+          </div>
+          
+          <div id="no-trip"></div>
+
+          <div id="all-trips"></div>
+        </div>
 
       </div>
     </div>
