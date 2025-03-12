@@ -1,11 +1,11 @@
-document.querySelector(".search").addEventListener("click", function () {
+let trainBooked = [];
 
+document.querySelector(".search").addEventListener("click", function () {
   const departure = document.querySelector(".departure").value;
 
   const arrival = document.querySelector(".arrival").value;
 
   const date = document.querySelector(".calendar").value;
-
 
   fetch("http://localhost:3000/trajets", {
     method: "POST",
@@ -14,26 +14,34 @@ document.querySelector(".search").addEventListener("click", function () {
   })
     .then((response) => response.json())
     .then((data) => {
-      document.querySelector("#all-trips").innerHTML = ""
+      document.querySelector("#all-trips").innerHTML = "";
       document.querySelector("#placeholder-train").style.display = "none";
       document.querySelector("#no-trip").style.display = "none";
       document.querySelector("#all-trips").style.display = "flex";
       if (data) {
-
+        let i = 0;
         for (let trip of data.trips) {
-          document.querySelector("#all-trips").innerHTML += `<div class="cart-row">
-                            <p> <span class="departure-train">${trip.departure}</span> > <span class="arrival-train">${trip.arrival}</span></p> 
-                            <p class="time-train">${trip.time}</p>
-                            <p class="price-train">${trip.price}€</p>
-                            <button class="book-train" type="button">Book</button>
-                        </div>`
+          document.querySelector(
+            "#all-trips"
+          ).innerHTML += `<div class="cart-row">
+                            <p> <span id="departure-train-${i}">${trip.departure}</span> > <span id="arrival-train-${i}">${trip.arrival}</span></p> 
+                            <p id="time-train-${i}">${trip.time}</p>
+                            <p id="price-train-${i}">${trip.price}€</p>
+                            <button id="${i}" class="book-train" type="button">Book</button>
+                        </div>`;
+          i++;
         }
+        bookATrip(trainBooked);
       }
-      if (departure === "" || arrival === "" || date === "" || data.trips.length === 0) {
+      if (
+        departure === "" ||
+        arrival === "" ||
+        date === "" ||
+        data.trips.length === 0
+      ) {
         document.querySelector("#placeholder-train").style.display = "none";
         document.querySelector("#all-trips").style.display = "none";
         document.querySelector("#no-trip ").style.display = "flex";
-
       }
     });
 });
@@ -44,6 +52,31 @@ document.querySelector(".search").addEventListener("click", function () {
         date: tripDate,
         price: trip.price, */
 
+function bookATrip(array) {
+  for (let i = 0; i < document.querySelectorAll(".book-train").length; i++) {
+    document
+      .querySelectorAll(".book-train")
+      [i].addEventListener("click", function () {
+        let j = this.id;
 
+        _departure = document.querySelector(
+          `#departure-train-${j}`
+        ).textContent;
+        _arrival = document.querySelector(`#arrival-train-${j}`).textContent;
+        _time = document.querySelector(`#time-train-${j}`).textContent;
+        _price = document.querySelector(`#price-train-${j}`).textContent;
 
-    
+        //console.log({departure: _departure, arrival: _arrival, time: _time, price: _price});
+
+        array.push({
+          departure: _departure,
+          arrival: _arrival,
+          time: _time,
+          price: _price,
+        });
+        console.log(array);
+
+        //window.location.assign('cart.html')
+      });
+  }
+}
