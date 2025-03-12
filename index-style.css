@@ -130,7 +130,8 @@ a:visited{
   width: 40%;
   border-radius: 15px;
     display:flex;
-    flex-direction: column;   
+    flex-direction: column; 
+    align-items: center;  
 }
 
 
@@ -160,6 +161,15 @@ a:visited{
     height: 5vh;
     font-size: 16px;
 
+}
+
+.deparr {
+    width: 80%;
+    display: block;
+    border: 0;
+    border-top: 1px solid grey;
+    padding: 0;
+    margin: 0;
 }
 
 .calendar {
@@ -220,7 +230,7 @@ hr {
     width: 80%;
     display: block;
     border: 0;
-    border-top: 5px solid #459e85;
+    border-top: 3px solid #459e85;
     margin: 1em 0;
     padding: 0;
 }
@@ -260,4 +270,24 @@ hr {
     background-color: #459e85;
     color: white;
     border: none;
+}
+
+#no-trip {
+    color: black;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.not-found {
+    width: 35%;
+    margin: 5%;
+}
+
+.no-future {
+    margin: 5%;
+    font-size: 20px;
+    font-weight: 600;
 }
