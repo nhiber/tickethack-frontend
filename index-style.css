@@ -147,6 +147,8 @@ a:visited{
     padding: 10px;
     height: 5vh;
     font-size: 16px;
+    width: 90%;
+
     
 }
 
@@ -160,14 +162,16 @@ a:visited{
     padding: 10px;
     height: 5vh;
     font-size: 16px;
+    width: 90%;
+
 
 }
 
 .deparr {
-    width: 80%;
+    width: 85%;
     display: block;
     border: 0;
-    border-top: 1px solid grey;
+    border-top: 1px solid #aaadac;
     padding: 0;
     margin: 0;
 }
@@ -182,6 +186,7 @@ a:visited{
     padding: 10px;
     height: 5vh;
     font-size: 16px;
+    width: 90%;
 
 }
 
@@ -197,6 +202,8 @@ a:visited{
     height: 5vh;
     font-size: 16px;
     cursor : pointer;
+    width: 90%;
+
 
 }
 
@@ -206,6 +213,7 @@ a:visited{
     background-color: white;
     color: black;
     width: 40%; 
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -242,10 +250,12 @@ hr {
 }
 
 #all-trips {
-    overflow: scroll;
-    display: grid;
+    overflow-y: scroll;
+    display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 98%;
+    height: 95%;
+    
 }
 
 .cart-row {
