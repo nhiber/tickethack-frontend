@@ -87,7 +87,7 @@ function bookATrip() {
           .then((response) => response.json())
           .then((data) => console.log(data));
 
-        //window.location.assign('cart.html')
+        window.location.assign('cart.html')
       });
   }
 }
