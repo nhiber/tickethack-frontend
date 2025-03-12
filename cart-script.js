@@ -36,26 +36,25 @@ function deleteTrip() {
     document
       .querySelectorAll(".delete")
       [i].addEventListener("click", function () {
-        
         let j = this.id;
-        
+
         console.log(j);
-        
+
         _departure = document.querySelector(
           `#departure-train-${j}`
         ).textContent;
-        
+
         console.log(_departure);
-        
+
         _arrival = document.querySelector(`#arrival-train-${j}`).textContent;
         _time = document
-        .querySelector(`#time-train-${j}`)
-        .textContent.split(":");
+          .querySelector(`#time-train-${j}`)
+          .textContent.split(":");
         _hour = _time[0];
         _minute = _time[1];
         _price = document
-        .querySelector(`#price-train-${j}`)
-        .textContent.slice(0, -1);
+          .querySelector(`#price-train-${j}`)
+          .textContent.slice(0, -1);
 
         let trip = {
           departure: _departure,
@@ -65,31 +64,28 @@ function deleteTrip() {
           price: _price,
         };
         //console.log(trip);
-        
+
         fetch("http://localhost:3000/chariots/delete", {
           method: "POST",
           headers: { "Content-type": "application/json" },
           body: JSON.stringify({ trip: trip }),
         })
-        .then((response) => response.json())
-        .then((data) => console.log(data));
+          .then((response) => response.json())
+          .then((data) => console.log(data));
         this.parentNode.remove();
 
         total -= _price;
         document.querySelector("#total").textContent = total.toString() + "€";
-
       });
   }
 }
 
 //-------------------------------------------------------------------------------------
 
-/*
 document.querySelector("#purchase").addEventListener("click", function () {
-   fetch("http://localhost:3000/achats)"
+  fetch("http://localhost:3000/achats")
     .then((response) => response.json())
     .then((data) => console.log(data));
-  
-  window.location.assign('bookings.html');
+
+  window.location.assign("bookings.html");
 });
-*/
