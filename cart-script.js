@@ -20,4 +20,10 @@ fetch("http://localhost:3000/chariots")
               i++;
             }
     }
+    if (data.data.length === 0) {
+      document.querySelector("#placeholder").style.display = "flex";
+      document.querySelector(".carts").style.display = "none";
+      document.querySelector("#contain-down").style.display = "none";
+    }
 });
+
