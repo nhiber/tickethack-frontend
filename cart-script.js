@@ -13,8 +13,8 @@ fetch("http://localhost:3000/chariots")
                                 <p id="time-train-${i}">${trip.hour}:${trip.minute}</p>
                                 <p id="price-train-${i}">${trip.price}€</p>
                                 <button id="${i}" class="purchase-train" type="button">Purchase</button>
-                            </div>`;
+                             </div>`;
               i++;
             }
     }
-    });
+});
