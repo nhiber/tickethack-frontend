@@ -38,8 +38,3 @@ document.querySelector(".search").addEventListener("click", function () {
     });
 });
 
-/*departure: trip.departure,
-        arrival: trip.arrival,
-        time: hour,
-        date: tripDate,
-        price: trip.price, */
