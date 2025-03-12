@@ -1,7 +1,7 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 #container {
@@ -45,11 +45,11 @@
 }
 
 h4 {
-  font-weight: 500;
+    font-weight: 500;
 }
 
 .cart {
-  margin-right: 2vw;
+    margin-right: 2vw;
 }
 
 a {
@@ -62,9 +62,9 @@ a:link {
     color: inherit;
 }
 
-a:visited{
+a:visited {
     color: inherit;
-  }
+}
 
 #contain {
     display: flex;
@@ -101,13 +101,13 @@ a:visited{
     text-align: center;
     font-weight: 500;
 
-    
+
 }
 
 .compare {
-  margin-bottom: auto;
-  font-size: 30px;
-  text-align: center;
+    margin-bottom: auto;
+    font-size: 30px;
+    text-align: center;
     width: 100%;
 }
 
@@ -123,18 +123,22 @@ a:visited{
 }
 
 #reserch {
-  margin-left: auto;
-  margin-right: auto;
-  background-color: white;
-  color: black;
-  width: 40%;
-  border-radius: 15px;
-    display:flex;
-    flex-direction: column; 
-    align-items: center;  
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    color: black;
+    width: 40%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+input:focus {
+    outline: none;
+    border: solid #4e84cc;
 
+}
 
 .departure {
     border: none;
@@ -149,7 +153,7 @@ a:visited{
     font-size: 16px;
     width: 90%;
 
-    
+
 }
 
 .arrival {
@@ -168,7 +172,7 @@ a:visited{
 }
 
 .deparr {
-    width: 85%;
+    width: 88%;
     display: block;
     border: 0;
     border-top: 1px solid #aaadac;
@@ -201,7 +205,7 @@ a:visited{
     margin-left: 7%;
     height: 5vh;
     font-size: 16px;
-    cursor : pointer;
+    cursor: pointer;
     width: 90%;
 
 
@@ -212,7 +216,7 @@ a:visited{
     margin-right: auto;
     background-color: white;
     color: black;
-    width: 40%; 
+    width: 40%;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -251,11 +255,11 @@ hr {
 
 #all-trips {
     overflow-y: scroll;
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 98%;
     height: 95%;
-    
+
 }
 
 .cart-row {
@@ -268,14 +272,14 @@ hr {
     background-color: #f5eeee;
 }
 
-.cart-row > p {
+.cart-row>p {
     margin: auto;
 }
 
 .book-train {
     margin: auto;
     width: 15%;
-    height: 80%;
+    height: 65%;
     border-radius: 5px;
     background-color: #459e85;
     color: white;
