@@ -3,7 +3,10 @@ fetch("http://localhost:3000/chariots")
     .then((data) => {
         console.log("data", data.data);
         if (data) {
-            //document.querySelector("").style.display = "none";
+            document.querySelector("#placeholder").style.display = "none";
+            document.querySelector(".carts").style.display = "flex";
+            document.querySelector("#contain-down").style.display = "flex";
+            
             let i = 0;
             for (let trip of data.data) {
               document.querySelector(
@@ -12,7 +15,7 @@ fetch("http://localhost:3000/chariots")
                                 <p> <span id="departure-train-${i}">${trip.departure}</span> > <span id="arrival-train-${i}">${trip.arrival}</span></p> 
                                 <p id="time-train-${i}">${trip.hour}:${trip.minute}</p>
                                 <p id="price-train-${i}">${trip.price}€</p>
-                                <button id="${i}" class="purchase-train" type="button">Purchase</button>
+                                <button id="${i}" class="delete" type="button">X</button>
                              </div>`;
               i++;
             }
