@@ -1,5 +1,3 @@
-let trainBooked = [];
-
 document.querySelector(".search").addEventListener("click", function () {
   const departure = document.querySelector(".departure").value;
 
@@ -17,7 +15,7 @@ document.querySelector(".search").addEventListener("click", function () {
       document.querySelector("#all-trips").innerHTML = "";
       document.querySelector("#placeholder-train").style.display = "none";
       document.querySelector("#no-trip").style.display = "none";
-      document.querySelector("#all-trips").style.display = "flex";
+      document.querySelector("#all-trips").style.display = "grid";
       if (data) {
         let i = 0;
         for (let trip of data.trips) {
@@ -31,7 +29,7 @@ document.querySelector(".search").addEventListener("click", function () {
                         </div>`;
           i++;
         }
-        bookATrip(trainBooked);
+        bookATrip();
       }
       if (
         departure === "" ||
@@ -52,7 +50,7 @@ document.querySelector(".search").addEventListener("click", function () {
         date: tripDate,
         price: trip.price, */
 
-function bookATrip(array) {
+function bookATrip() {
   for (let i = 0; i < document.querySelectorAll(".book-train").length; i++) {
     document
       .querySelectorAll(".book-train")
@@ -63,18 +61,31 @@ function bookATrip(array) {
           `#departure-train-${j}`
         ).textContent;
         _arrival = document.querySelector(`#arrival-train-${j}`).textContent;
-        _time = document.querySelector(`#time-train-${j}`).textContent;
-        _price = document.querySelector(`#price-train-${j}`).textContent;
+        _time = document
+          .querySelector(`#time-train-${j}`)
+          .textContent.split(":");
+        _hour = _time[0];
+        _minute = _time[1];
+        _price = document
+          .querySelector(`#price-train-${j}`)
+          .textContent.slice(0, -1);
 
-        //console.log({departure: _departure, arrival: _arrival, time: _time, price: _price});
-
-        array.push({
+        let trip = {
           departure: _departure,
           arrival: _arrival,
-          time: _time,
+          hour: _hour,
+          minute: _minute,
           price: _price,
-        });
-        console.log(array);
+        };
+        //console.log(trip);
+
+        fetch("http://localhost:3000/trajets/book", {
+          method: "POST",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify({ trip: trip }),
+        })
+          .then((response) => response.json())
+          .then((data) => console.log(data));
 
         //window.location.assign('cart.html')
       });
