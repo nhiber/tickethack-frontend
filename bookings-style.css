@@ -91,8 +91,7 @@ a:visited{
     justify-content: center;
     align-items: center;
     background-color: white;
-    border-top-left-radius: 8px; /*arrondir les bordure*/
-    border-top-right-radius: 8px;
+    border-radius: 8px;
 }
 
 .mybookings {
@@ -138,32 +137,53 @@ a:visited{
     /*arrondir les bordurs du bas*/
 }
 
-#enjoy {
-    background-color: rgba(69, 158, 133, 255);
-    padding: 10px 15px 10px 15px;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border: none;
-    display: flex;
-}
 
 .total {
     color: white;
 }
 
-.mybooking {
-    background-color: white;
+
+.mybookings {
+    margin-bottom: 5%;
 }
 
-#enjoy {
-    background-color: #459e85;
-    width: 30px;
-    height: 30px;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border: none;
+.cart-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    background-color: rgba(245, 238, 238, 255);
+    margin-top: 40px;
+    height: 80px;
+    padding: 2%;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 5px;
+  }
+
+.enjoy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+hr {
+    width: 70%;
+    display: block;
+    border: 0;
+    border-top: 2px solid black;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.travel {
+    color:#459e85;
+    margin-top: 10%;
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  

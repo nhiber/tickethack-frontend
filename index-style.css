@@ -257,6 +257,7 @@ hr {
     overflow-y: scroll;
     display: none;
     flex-direction: column;
+    align-items: center;
     width: 98%;
     height: 95%;
 

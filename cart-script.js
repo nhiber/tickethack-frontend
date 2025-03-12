@@ -12,7 +12,13 @@ fetch("http://localhost:3000/chariots")
 
       for (let trip of data.data) {
         total += Number(trip.price);
+        if (trip.hour < 10) {
+          trip.hour = "0" + trip.hour;
+        }
 
+        if (trip.minute < 10) {
+          trip.minute = "0" + trip.minute;
+        }
         document.querySelector(".carts").innerHTML += `<div class="cart-row">
                                 <p> <span id="departure-train-${i}">${trip.departure}</span> > <span id="arrival-train-${i}">${trip.arrival}</span></p> 
                                 <p id="time-train-${i}">${trip.hour}:${trip.minute}</p>
